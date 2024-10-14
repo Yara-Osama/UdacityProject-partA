@@ -1,0 +1,42 @@
+@import url('fonts.css');
+@import url('post-layout.css');
+@import url('post-typography.css');
+@import url('post-elements.css');
+
+@media only screen and (max-width: 768px) {
+    .blog-post-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .author-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .author-avatar {
+        margin-bottom: 10px;
+    }
+
+    .blog-post-title {
+        font-size: 1.8rem;
+    }
+
+    .author-info h2, .blog-post-content h2, .blog-post-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .back-to-blog {
+        font-size: 0.8rem;
+    }
+
+    .author-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .blog-post-content p, .blog-post-content ul {
+        font-size: 0.95rem;
+    }
+}

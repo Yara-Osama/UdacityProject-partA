@@ -1,0 +1,6 @@
+
+@media (max-width: 768px) {
+    .login-form, .kidcalc-section, .information-bar {
+        width: 95%;
+    }
+}

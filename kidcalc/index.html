@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidCalc</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/theme1.css" id="theme1-css" disabled>
+    <link rel="stylesheet" href="assets/theme2.css" id="theme2-css" disabled>
+    <link rel="stylesheet" href="assets/theme3.css" id="theme3-css" disabled>
+</head>
+<body>
+    <div class="login-form">
+        <form id="loginForm">
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-field">
+                <label for="theme">Preferred Theme:</label>
+                <select id="theme" name="theme">
+                    <option value="theme1">Space</option>
+                    <option value="theme2">Dinosaurs</option>
+                    <option value="theme3">Cars</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="kidcalc-section">
+
+        <div class="number-buttons">
+            <button onclick="updateCalc('0')">0</button>
+            <button onclick="updateCalc('1')">1</button>
+            <button onclick="updateCalc('2')">2</button>
+            <button onclick="updateCalc('3')">3</button>
+            <button onclick="updateCalc('4')">4</button>
+            <button onclick="updateCalc('5')">5</button>
+            <button onclick="updateCalc('6')">6</button>
+            <button onclick="updateCalc('7')">7</button>
+            <button onclick="updateCalc('8')">8</button>
+            <button onclick="updateCalc('9')">9</button>
+        </div>
+        
+        <div class="operator-buttons">
+            <button onclick="updateCalc('+')">+</button>
+            <button onclick="updateCalc('-')">-</button>
+            <button onclick="updateCalc('*')">*</button>
+            <button onclick="updateCalc('/')">/</button>
+            <button onclick="updateCalc('>')">&gt;</button>
+            <button onclick="updateCalc('<')">&lt;</button>
+            <button onclick="updateCalc('=')">=</button>
+        </div>
+
+        <div class="calc-display">
+            <input type="text" id="calc-expression" readonly>
+        </div>
+        <div class="calc-answer">
+            <input type="text" id="calc-answer" placeholder="Your answer">
+        </div>
+        <div class="calc-controls">
+            <button type="button" id="calc-submit" onclick="submitCalc()">Submit</button>
+            <button type="button" id="calc-clear" onclick="clearCalc()">Clear</button>
+        </div>
+        <div class="calc-results">
+            <p id="calc-result-text">Results will be displayed here</p>
+        </div>
+    </div>
+
+    <div class="information-bar">
+        <p id="welcome-message">Welcome to KidCalc!</p>
+        <p>Correctly Solved: <span id="correct-solved">0</span></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var userName = document.getElementById('name').value;
+            var selectedTheme = document.getElementById('theme').value;
+            changeTheme(selectedTheme);
+            document.getElementById('welcome-message').innerText = 'Welcome to KidCalc, ' + userName + '!';
+        });
+
+        function changeTheme(themeName) {
+            document.body.classList.remove('theme1', 'theme2', 'theme3');
+
+            document.body.classList.add(themeName);
+
+            ['theme1-css', 'theme2-css', 'theme3-css'].forEach(themeId => {
+                document.getElementById(themeId).disabled = themeId !== themeName + '-css';
+            });
+        }
+
+
+        function updateCalc(value) {
+            document.getElementById('calc-expression').value += value;
+        }
+
+        function clearCalc() {
+            document.getElementById('calc-expression').value = '';
+            document.getElementById('calc-answer').value = '';
+            document.getElementById('calc-result-text').innerText = 'Results will be displayed here';
+        }
+
+        function submitCalc() {
+            var expression = document.getElementById('calc-expression').value;
+            var userAnswer = parseFloat(document.getElementById('calc-answer').value);
+            var correctAnswer = evaluateExpression(expression);
+
+            if (userAnswer === correctAnswer) {
+                document.getElementById('calc-result-text').innerText = 'Correct!';
+                var correctSolved = parseInt(document.getElementById('correct-solved').innerText);
+                document.getElementById('correct-solved').innerText = correctSolved + 1;
+            } else {
+                document.getElementById('calc-result-text').innerText = 'Incorrect. Try again!';
+            }
+        }
+
+        function evaluateExpression(expr) {
+            try {
+                return Function('"use strict";return (' + expr + ')')();
+            } catch (error) {
+                console.error(error);
+                return NaN;
+            }
+        }
+    </script>
+</body>
+</html>

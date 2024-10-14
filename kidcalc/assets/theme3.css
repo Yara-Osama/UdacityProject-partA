@@ -1,0 +1,46 @@
+/* theme3.css - Cars Theme */
+body.theme3 {
+    background-color: #ececec; 
+    color: #333333; 
+    background-image: url('../assets/images/cars3.jpg'), url('../assets/images/cars2.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom;
+    background-size: cover, cover;
+    background-attachment: fixed, fixed;
+}
+
+body.theme3 .form-field label,
+body.theme3 .information-bar p,
+body.theme3 .calc-results p {
+    color: #303030; 
+}
+
+body.theme3 button {
+    background-color: #FF6F61; 
+    color: #FFFFFF; 
+    border: 2px solid #FF9E80; 
+}
+
+body.theme3 .calc-display input,
+body.theme3 .calc-answer input {
+    background-color: #FFF3E0; 
+    color: #616161; 
+    border: 2px solid #FFAB91; 
+}
+
+body.theme3 .calc-controls button:hover {
+    background-color: #FF8A65; 
+    color: #FFFFFF; 
+}
+
+body.theme3 .calc-results {
+    background-color: #FFAB91; 
+    color: #303030; 
+}
+
+body.theme3 .information-bar {
+    background-color: #FFAB91; 
+    color: #303030; 
+}
+
+

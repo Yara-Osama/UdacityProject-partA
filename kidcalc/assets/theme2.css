@@ -1,0 +1,40 @@
+/* theme2.css - Dinosaur Theme */
+body.theme2 {
+    background-color: #c7d5b1; 
+    color: #333333; 
+    background-image: url('../assets/images/dinosaur1.jpg'), url('../assets/images/dinosaur2.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom;
+    background-size: cover, cover;
+    background-attachment: fixed, fixed;
+}
+
+body.theme2 .form-field label,
+body.theme2 .information-bar p,
+body.theme2 .calc-results p {
+    color: #3E443B; 
+}
+
+body.theme2 button {
+    background-color: #8A9A5B; 
+    color: #F4F4F2; 
+    border: 2px solid #727967; 
+}
+
+body.theme2 .calc-display input,
+body.theme2 .calc-answer input {
+    background-color: #A4A882; 
+    color: #333; 
+    border: 2px solid #727967; 
+}
+
+body.theme2 .calc-controls button:hover {
+    background-color: #9C9F88; 
+    color: #5C5F58; 
+}
+
+body.theme2 .calc-results {
+    background-color: #8A9A5B; 
+    color: #F4F4F2; 
+}
+

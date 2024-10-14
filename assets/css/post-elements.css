@@ -1,0 +1,26 @@
+
+.back-to-blog {
+    color: blue;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.back-to-blog::before {
+    content: "← ";
+}
+
+.author-avatar {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.blog-post-content ul {
+    padding-left: 20px;
+}
+
+.social-links li a:hover {
+    text-decoration: underline;
+}

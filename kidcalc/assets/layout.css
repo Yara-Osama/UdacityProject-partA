@@ -1,0 +1,27 @@
+.login-form, .kidcalc-section, .information-bar {
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 80%;
+    max-width: 960px;
+}
+
+.number-buttons, .operator-buttons, .calc-controls {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.calc-display input, .calc-answer input {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.calc-results p, .information-bar p {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}

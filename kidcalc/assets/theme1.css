@@ -1,0 +1,41 @@
+/* theme1.css - Space Theme */
+body.theme1 {
+    background-color: #3D5A80; 
+    color: #ffffff; 
+    background-image: url('../assets/images/space1.jpg'), url('../assets/images/space2.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, bottom;
+    background-size: cover, cover;
+    background-attachment: fixed, fixed;
+}
+
+
+body.theme1 .form-field label {
+    color: #293241; 
+}
+
+body.theme1 button {
+    background-color: #3D5A80; 
+    color: #E0E0E0; 
+    border: 1px solid #293241; 
+}
+
+
+body.theme1 .calc-display input,
+body.theme1 .calc-answer input {
+    background-color: #3D5A80; 
+    color: #E0E0E0; 
+    border: 1px solid #293241;
+}
+
+body.theme1 .calc-results {
+    background-color: #293241; 
+    color: #E0E0E0; 
+}
+
+body.theme1 .information-bar {
+    background-color: #3D5A80; 
+    color: #E0E0E0; 
+}
+
+
